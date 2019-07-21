@@ -5,12 +5,9 @@
   <script src="https://deepleisure.tumblr.com/api/read/json"></script>
   <script>
     $( document ).ready(function() {
-      $('#wrapper').append("<h1>"+tumblr_api_read.tumblelog.name + "</h1>"); 
         for (var i=0;i<tumblr_api_read.posts.length;i++) {
             var thisPost = tumblr_api_read.posts[i];
-            console.log(thisPost["video-player"])
             $('#wrapper').append(thisPost["video-player"]);
-            $('#wrapper').append("TEST");
         }
   });
       
