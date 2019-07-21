@@ -4,13 +4,16 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>  
   <script src="https://deepleisure.tumblr.com/api/read/json"></script>
   <script>
-  $('#wrapper').append("<h1>"+tumblr_api_read.tumblelog.name + "</h1>"); 
-    for (var i=0;i<tumblr_api_read.posts.length;i++) {
-        var thisPost = tumblr_api_read.posts[i];
-        console.log(thisPost)
-        $('#wrapper').append(thisPost["video-player"]);
-        $('#wrapper').append("TEST");
-    }
+    $( document ).ready(function() {
+      $('#wrapper').append("<h1>"+tumblr_api_read.tumblelog.name + "</h1>"); 
+        for (var i=0;i<tumblr_api_read.posts.length;i++) {
+            var thisPost = tumblr_api_read.posts[i];
+            console.log(thisPost["video-player"])
+            $('#wrapper').append(thisPost["video-player"]);
+            $('#wrapper').append("TEST");
+        }
+  });
+      
   </script>
   </head>
   <body>
