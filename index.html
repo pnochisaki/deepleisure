@@ -1,12 +1,13 @@
 <html>
+  <style>.videos {text-align: center;}</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>  <script src="https://deepleisure.tumblr.com/api/read/json"></script>
   <script>
   $('#wrapper').append("<h1>"+tumblr_api_read.tumblelog.name + "</h1>"); 
     for (var i=0;i<tumblr_api_read.posts.length;i++) {
         var thisPost = tumblr_api_read.posts[i];
       console.log(thisPost)
-        $('#wrapper').append("<img src='" + thisPost["photo-url-500"] + "'>" +  thisPost["photo-caption"]  + "<p>Posted on " + thisPost["date"] + "</p><hr>");
+        $('#wrapper').append(thisPost["video-player"]);
     }
   </script>
   <img src="deepleisure-strobe.gif" style="max-width: 800px;width: 100%;height: auto;margin: 7% auto;display: block">
-  <div id="wrapper"></div>
+  <div id="wrapper" class="videos"></div>
